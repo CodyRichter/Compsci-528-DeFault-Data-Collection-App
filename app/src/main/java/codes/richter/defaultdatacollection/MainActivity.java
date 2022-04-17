@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     Sensor accelerometer;
     Sensor barometer;
 
+    boolean badSwingMode = false;
     boolean currentlyTracking = false;
     String currentStroke = "Forehand";
     String currentFile = "";
@@ -52,6 +55,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Button forehandButton = findViewById(R.id.forehandButton);
         Button backhandButton = findViewById(R.id.backhandButton);
         Button overheadButton = findViewById(R.id.overheadButton);
+
+        SwitchMaterial badSwingModeSwitch = findViewById(R.id.badSwingModeSwitch);
+
+        badSwingModeSwitch.setOnClickListener(l -> {
+            badSwingMode = badSwingModeSwitch.isChecked();
+        });
+
+        forehandButton.setOnClickListener( view -> {
+            currentStroke = "Forehand";
+            selectedSwingView.setText("Forehand");
+        });
 
         forehandButton.setOnClickListener( view -> {
             currentStroke = "Forehand";
@@ -90,14 +104,20 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 backhandButton.setEnabled(true);
                 overheadButton.setEnabled(true);
                 deletePreviousButton.setEnabled(true);
+                badSwingModeSwitch.setEnabled(true);
             } else {
                 toggleRecordButton.setText("Stop");
-                currentFile = currentStroke + "_" + String.valueOf(System.currentTimeMillis()) + ".csv";
+                if (!badSwingMode) {
+                    currentFile = currentStroke + "_" + String.valueOf(System.currentTimeMillis()) + ".csv";
+                } else {
+                    currentFile = currentStroke + "_" + String.valueOf(System.currentTimeMillis()) + "_bad" + ".csv";
+                }
                 currentlyTracking = true;
                 forehandButton.setEnabled(false);
                 backhandButton.setEnabled(false);
                 overheadButton.setEnabled(false);
                 deletePreviousButton.setEnabled(false);
+                badSwingModeSwitch.setEnabled(false);
             }
 
 
