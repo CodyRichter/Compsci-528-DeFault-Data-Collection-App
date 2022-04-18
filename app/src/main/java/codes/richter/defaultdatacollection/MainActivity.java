@@ -166,8 +166,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     protected void onResume() {
         super.onResume();
-        manager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-        manager.registerListener(this, barometer, SensorManager.SENSOR_DELAY_NORMAL);
+        manager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
+        manager.registerListener(this, barometer, SensorManager.SENSOR_DELAY_GAME);
     }
 
 
