@@ -14,6 +14,7 @@ id badSwingModeSwitch
 id deletePreviousButton
 id forehandButton
 id overheadButton
+id passiveButton
 id selectedSwingType
 id swingTypeTitle
 id toggleRecordButton

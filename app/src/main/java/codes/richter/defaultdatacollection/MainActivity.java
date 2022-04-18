@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Button toggleRecordButton = findViewById(R.id.toggleRecordButton);
         Button deletePreviousButton = findViewById(R.id.deletePreviousButton);
 
+        Button passiveButton = findViewById(R.id.passiveButton);
         Button forehandButton = findViewById(R.id.forehandButton);
         Button backhandButton = findViewById(R.id.backhandButton);
         Button overheadButton = findViewById(R.id.overheadButton);
@@ -62,22 +63,29 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             badSwingMode = badSwingModeSwitch.isChecked();
         });
 
-        forehandButton.setOnClickListener( view -> {
-            currentStroke = "Forehand";
-            selectedSwingView.setText("Forehand");
+        passiveButton.setOnClickListener( view -> {
+            currentStroke = "Passive";
+            selectedSwingView.setText("Passive");
+            badSwingModeSwitch.setEnabled(false);
+            badSwingModeSwitch.setChecked(false);
+            badSwingMode = false;
         });
 
         forehandButton.setOnClickListener( view -> {
             currentStroke = "Forehand";
             selectedSwingView.setText("Forehand");
+            badSwingModeSwitch.setEnabled(true);
+
         });
         backhandButton.setOnClickListener( view -> {
             currentStroke = "Backhand";
             selectedSwingView.setText("Backhand");
+            badSwingModeSwitch.setEnabled(true);
         });
         overheadButton.setOnClickListener( view -> {
             currentStroke = "Overhead";
             selectedSwingView.setText("Overhead");
+            badSwingModeSwitch.setEnabled(true);
         });
 
         deletePreviousButton.setEnabled(false);
@@ -100,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             if (currentlyTracking) {
                 toggleRecordButton.setText("Start");
                 currentlyTracking = false;
+                passiveButton.setEnabled(true);
                 forehandButton.setEnabled(true);
                 backhandButton.setEnabled(true);
                 overheadButton.setEnabled(true);
@@ -113,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     currentFile = currentStroke + "_" + String.valueOf(System.currentTimeMillis()) + "_bad" + ".csv";
                 }
                 currentlyTracking = true;
+                passiveButton.setEnabled(false);
                 forehandButton.setEnabled(false);
                 backhandButton.setEnabled(false);
                 overheadButton.setEnabled(false);
