@@ -9,10 +9,22 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.pytorch.IValue;
+import org.pytorch.LiteModuleLoader;
+import org.pytorch.Module;
+import org.pytorch.Tensor;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ClassifyActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -31,6 +43,8 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
     float startTime;
     float currentTime;
 
+    Module module = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +55,12 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
         barometer = manager.getDefaultSensor(Sensor.TYPE_PRESSURE);
 
         startTime = System.currentTimeMillis();
+
+        try {
+            module = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "model.pt"));
+        } catch (Exception e) {
+            Log.w(MainActivity.class.getName(), "Error reading assets", e);
+        }
 
 
         Button toggleContextButton = findViewById(R.id.enableCollectionMode);
@@ -66,6 +86,11 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
     @Override
     public void onSensorChanged(SensorEvent e) {
         currentTime = System.currentTimeMillis();
+
+        if (!classifyEnabled) {
+            return;
+        }
+
         // Accelerometer
         if (e.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             currentAccelDataX.add(e.values[0]);
@@ -77,7 +102,7 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
             currentBarData.add(e.values[0]);
         }
 
-        if (currentTime - startTime >= 3000) {
+        if ((currentTime - startTime >= 3000)) {
             classifyWindow(
                     new ArrayList<>(currentAccelDataX),
                     new ArrayList<>(currentAccelDataY),
@@ -123,6 +148,15 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
 
         final long[] shape = new long[]{1, 8};
         final float[] inputData = new float[]{meanX, meanY, meanZ, meanMag, stdX, stdY, stdZ, stdMag};
+
+        final Tensor inputTensor = Tensor.fromBlob(inputData, shape);
+
+        // running the model
+        final Tensor outputTensor = module.forward(IValue.from(inputTensor)).toTensor();
+
+        // getting tensor content as java array of floats
+        final float[] scores = outputTensor.getDataAsFloatArray();
+        currentActivity.setText(Arrays.toString(scores));
     }
 
 

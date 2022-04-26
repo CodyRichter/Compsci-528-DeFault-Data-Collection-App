@@ -15,8 +15,7 @@ ADDED from /Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src
 INJECTED from /Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:2:1-39:12
 INJECTED from /Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:2:1-39:12
 INJECTED from /Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:2:1-39:12
-MERGED from [org.pytorch:pytorch_android_torchvision:1.9.0] /Users/Cody/.gradle/caches/transforms-3/0dc54839b4810667aa161508fd3a698d/transformed/jetified-pytorch_android_torchvision-1.9.0/AndroidManifest.xml:2:1-10:12
-MERGED from [org.pytorch:pytorch_android_lite:1.9.0] /Users/Cody/.gradle/caches/transforms-3/e698810d480c3db20d1b88fc24e631d3/transformed/jetified-pytorch_android_lite-1.9.0/AndroidManifest.xml:2:1-10:12
+MERGED from [org.pytorch:pytorch_android_lite:1.10.0] /Users/Cody/.gradle/caches/transforms-3/06f713f011c4653c05a5074ece76eaae/transformed/jetified-pytorch_android_lite-1.10.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.material:material:1.5.0] /Users/Cody/.gradle/caches/transforms-3/f4644d49845b47ba06b9572c54ce16a0/transformed/material-1.5.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /Users/Cody/.gradle/caches/transforms-3/aa44eb9e8d37a3439d636831a2be5455/transformed/constraintlayout-2.1.3/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/Cody/.gradle/caches/transforms-3/914116008979e77bc79da871871e9f31/transformed/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
@@ -137,10 +136,8 @@ uses-sdk
 INJECTED from /Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml
 INJECTED from /Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml
-MERGED from [org.pytorch:pytorch_android_torchvision:1.9.0] /Users/Cody/.gradle/caches/transforms-3/0dc54839b4810667aa161508fd3a698d/transformed/jetified-pytorch_android_torchvision-1.9.0/AndroidManifest.xml:6:5-8:41
-MERGED from [org.pytorch:pytorch_android_torchvision:1.9.0] /Users/Cody/.gradle/caches/transforms-3/0dc54839b4810667aa161508fd3a698d/transformed/jetified-pytorch_android_torchvision-1.9.0/AndroidManifest.xml:6:5-8:41
-MERGED from [org.pytorch:pytorch_android_lite:1.9.0] /Users/Cody/.gradle/caches/transforms-3/e698810d480c3db20d1b88fc24e631d3/transformed/jetified-pytorch_android_lite-1.9.0/AndroidManifest.xml:6:5-8:41
-MERGED from [org.pytorch:pytorch_android_lite:1.9.0] /Users/Cody/.gradle/caches/transforms-3/e698810d480c3db20d1b88fc24e631d3/transformed/jetified-pytorch_android_lite-1.9.0/AndroidManifest.xml:6:5-8:41
+MERGED from [org.pytorch:pytorch_android_lite:1.10.0] /Users/Cody/.gradle/caches/transforms-3/06f713f011c4653c05a5074ece76eaae/transformed/jetified-pytorch_android_lite-1.10.0/AndroidManifest.xml:6:5-8:41
+MERGED from [org.pytorch:pytorch_android_lite:1.10.0] /Users/Cody/.gradle/caches/transforms-3/06f713f011c4653c05a5074ece76eaae/transformed/jetified-pytorch_android_lite-1.10.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.android.material:material:1.5.0] /Users/Cody/.gradle/caches/transforms-3/f4644d49845b47ba06b9572c54ce16a0/transformed/material-1.5.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.5.0] /Users/Cody/.gradle/caches/transforms-3/f4644d49845b47ba06b9572c54ce16a0/transformed/material-1.5.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /Users/Cody/.gradle/caches/transforms-3/aa44eb9e8d37a3439d636831a2be5455/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
