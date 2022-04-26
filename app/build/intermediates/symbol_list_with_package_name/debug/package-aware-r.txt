@@ -2575,6 +2575,8 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_text
 id actions
+id activityName
+id activityNameTitle
 id activity_chooser_view_content
 id add
 id alertTitle
@@ -2632,6 +2634,8 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id collectTitle
+id collectTitle2
 id compress
 id confirm_button
 id constraint
@@ -2683,6 +2687,8 @@ id easeOut
 id east
 id edit_query
 id elastic
+id enableClassifyMode
+id enableCollectionMode
 id end
 id endToStart
 id enterAlways
@@ -2957,6 +2963,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toggleClassifyButton
 id toggleRecordButton
 id top
 id topPanel
@@ -3076,6 +3083,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_classify
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item

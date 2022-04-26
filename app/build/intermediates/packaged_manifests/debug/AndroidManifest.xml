@@ -23,6 +23,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.DeFaultDataCollection" >
         <activity
+            android:name="codes.richter.defaultdatacollection.ClassifyActivity"
+            android:exported="false" />
+        <activity
             android:name="codes.richter.defaultdatacollection.MainActivity"
             android:exported="true" >
             <intent-filter>

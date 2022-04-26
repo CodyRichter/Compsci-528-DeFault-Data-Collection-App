@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -56,6 +57,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Button forehandButton = findViewById(R.id.forehandButton);
         Button backhandButton = findViewById(R.id.backhandButton);
         Button overheadButton = findViewById(R.id.overheadButton);
+
+        Button toggleContextButton = findViewById(R.id.enableClassifyMode);
+
+        toggleContextButton.setOnClickListener(view -> {
+            Intent myIntent = new Intent(this, ClassifyActivity.class);
+            startActivity(myIntent);
+        });
+
+
 
         SwitchMaterial badSwingModeSwitch = findViewById(R.id.badSwingModeSwitch);
 
@@ -152,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             }
 
-        // Barometer
+            // Barometer
         } else if (e.sensor.getType() == Sensor.TYPE_PRESSURE) {
             float barometerReading = e.values[0];
             if (currentlyTracking) {
