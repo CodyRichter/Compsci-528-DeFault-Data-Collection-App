@@ -1,4 +1,0 @@
-#Tue Apr 26 15:32:22 EDT 2022
-base.0=/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
