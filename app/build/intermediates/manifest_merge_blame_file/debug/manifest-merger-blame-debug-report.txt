@@ -16,87 +16,90 @@
 12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 12-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:6:5-80
 12-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:6:22-77
-13
-14    <application
-14-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:8:5-37:19
-15        android:allowBackup="true"
-15-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:9:9-35
-16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.7.0] /Users/Cody/.gradle/caches/transforms-3/b9e4376e452ce4f1a2bbb1fc4b534124/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
-17        android:debuggable="true"
-18        android:extractNativeLibs="false"
-19        android:icon="@mipmap/ic_launcher"
-19-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:10:9-43
-20        android:label="@string/app_name"
-20-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:11:9-41
-21        android:roundIcon="@mipmap/ic_launcher_round"
-21-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:12:9-54
-22        android:supportsRtl="true"
-22-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:13:9-35
-23        android:testOnly="true"
-24        android:theme="@style/Theme.DeFaultDataCollection" >
-24-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:14:9-59
-25        <activity
-25-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:15:9-17:40
-26            android:name="codes.richter.defaultdatacollection.ClassifyActivity"
-26-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:16:13-45
-27            android:exported="false" />
-27-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:17:13-37
-28        <activity
-28-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:18:9-26:20
-29            android:name="codes.richter.defaultdatacollection.MainActivity"
-29-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:19:13-41
-30            android:exported="true" >
-30-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:20:13-36
-31            <intent-filter>
-31-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:21:13-25:29
-32                <action android:name="android.intent.action.MAIN" />
-32-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:22:17-69
-32-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:22:25-66
-33
-34                <category android:name="android.intent.category.LAUNCHER" />
-34-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:24:17-77
-34-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:24:27-74
-35            </intent-filter>
-36        </activity>
-37
-38        <provider
-39            android:name="androidx.core.content.FileProvider"
-39-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:29:13-62
-40            android:authorities="codes.richter.defaultdatacollection.provider"
-40-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:30:13-60
-41            android:exported="false"
-41-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:31:13-37
-42            android:grantUriPermissions="true" >
-42-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:32:13-47
-43            <meta-data
-43-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:33:13-35:58
-44                android:name="android.support.FILE_PROVIDER_PATHS"
-44-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:34:17-67
-45                android:resource="@xml/provider_paths" />
-45-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:35:17-55
-46        </provider>
-47        <provider
-47-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-48            android:name="androidx.startup.InitializationProvider"
-48-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-49            android:authorities="codes.richter.defaultdatacollection.androidx-startup"
-49-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-50            android:exported="false" >
-50-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-51            <meta-data
-51-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-52                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-52-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-53                android:value="androidx.startup" />
-53-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-54            <meta-data
-54-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/Cody/.gradle/caches/transforms-3/b5a10263a72c0b80aefb6f8f76c83ace/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-55                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-55-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/Cody/.gradle/caches/transforms-3/b5a10263a72c0b80aefb6f8f76c83ace/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-56                android:value="androidx.startup" />
-56-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/Cody/.gradle/caches/transforms-3/b5a10263a72c0b80aefb6f8f76c83ace/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-57        </provider>
-58    </application>
-59
-60</manifest>
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:7:5-66
+13-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:7:22-64
+14
+15    <application
+15-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:9:5-38:19
+16        android:allowBackup="true"
+16-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:10:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.7.0] /Users/Cody/.gradle/caches/transforms-3/b9e4376e452ce4f1a2bbb1fc4b534124/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:extractNativeLibs="false"
+20        android:icon="@mipmap/ic_launcher"
+20-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:11:9-43
+21        android:label="@string/app_name"
+21-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:12:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:13:9-54
+23        android:supportsRtl="true"
+23-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:14:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.DeFaultDataCollection" >
+25-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:15:9-59
+26        <activity
+26-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:16:9-18:40
+27            android:name="codes.richter.defaultdatacollection.ClassifyActivity"
+27-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:17:13-45
+28            android:exported="false" />
+28-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:18:13-37
+29        <activity
+29-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:19:9-27:20
+30            android:name="codes.richter.defaultdatacollection.MainActivity"
+30-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:20:13-41
+31            android:exported="true" >
+31-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:21:13-36
+32            <intent-filter>
+32-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:22:13-26:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:23:17-69
+33-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:23:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:25:17-77
+35-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:25:27-74
+36            </intent-filter>
+37        </activity>
+38
+39        <provider
+40            android:name="androidx.core.content.FileProvider"
+40-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:30:13-62
+41            android:authorities="codes.richter.defaultdatacollection.provider"
+41-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:31:13-60
+42            android:exported="false"
+42-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:32:13-37
+43            android:grantUriPermissions="true" >
+43-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:33:13-47
+44            <meta-data
+44-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:34:13-36:58
+45                android:name="android.support.FILE_PROVIDER_PATHS"
+45-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:35:17-67
+46                android:resource="@xml/provider_paths" />
+46-->/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/AndroidManifest.xml:36:17-55
+47        </provider>
+48        <provider
+48-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+49            android:name="androidx.startup.InitializationProvider"
+49-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+50            android:authorities="codes.richter.defaultdatacollection.androidx-startup"
+50-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+51            android:exported="false" >
+51-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+52            <meta-data
+52-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+53                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+53-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+54                android:value="androidx.startup" />
+54-->[androidx.emoji2:emoji2:1.0.0] /Users/Cody/.gradle/caches/transforms-3/4d40ec21232b611dd716b892ede208d6/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+55            <meta-data
+55-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/Cody/.gradle/caches/transforms-3/b5a10263a72c0b80aefb6f8f76c83ace/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+56                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+56-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/Cody/.gradle/caches/transforms-3/b5a10263a72c0b80aefb6f8f76c83ace/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+57                android:value="androidx.startup" />
+57-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/Cody/.gradle/caches/transforms-3/b5a10263a72c0b80aefb6f8f76c83ace/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+58        </provider>
+59    </application>
+60
+61</manifest>

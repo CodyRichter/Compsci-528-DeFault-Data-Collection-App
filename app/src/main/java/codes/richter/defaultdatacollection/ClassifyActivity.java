@@ -8,23 +8,23 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.pytorch.IValue;
-import org.pytorch.LiteModuleLoader;
-import org.pytorch.Module;
-import org.pytorch.Tensor;
+import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Objects;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class ClassifyActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -40,10 +40,10 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
     ArrayList<Float> currentAccelDataY = new ArrayList<>();
     ArrayList<Float> currentAccelDataZ = new ArrayList<>();
     ArrayList<Float> currentBarData = new ArrayList<>();
-    float startTime;
-    float currentTime;
+    double startTime = System.currentTimeMillis();
+    double currentTime = System.currentTimeMillis();
 
-    Module module = null;
+    OkHttpClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +54,7 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
         accelerometer = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         barometer = manager.getDefaultSensor(Sensor.TYPE_PRESSURE);
 
-        startTime = System.currentTimeMillis();
-
-        try {
-            module = LiteModuleLoader.load(MainActivity.assetFilePath(getApplicationContext(), "model.pt"));
-        } catch (Exception e) {
-            Log.w(MainActivity.class.getName(), "Error reading assets", e);
-        }
-
-
+        client = new OkHttpClient();
         Button toggleContextButton = findViewById(R.id.enableCollectionMode);
         currentActivity = findViewById(R.id.activityName);
 
@@ -79,8 +71,6 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
             classifyEnabled = !classifyEnabled;
             toggleClassifyButton.setText(classifyEnabled ? "Stop Detection" : "Start Detection");
         });
-
-
     }
 
     @Override
@@ -146,23 +136,14 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
         float stdZ = std(accelWindowDataZ);
         float stdMag = std(accelMag);
 
-        final long[] shape = new long[]{1, 8};
-        final float[] inputData = new float[]{meanX, meanY, meanZ, meanMag, stdX, stdY, stdZ, stdMag};
+        final String inputData = "{\"features\": ["+meanX+","+ +meanY+","+meanZ+","+meanMag+","+stdX+","+stdY+","+stdZ+","+stdMag+"]}";
 
-        final Tensor inputTensor = Tensor.fromBlob(inputData, shape);
-
-        // running the model
-        final Tensor outputTensor = module.forward(IValue.from(inputTensor)).toTensor();
-
-        // getting tensor content as java array of floats
-        final float[] scores = outputTensor.getDataAsFloatArray();
-        currentActivity.setText(Arrays.toString(scores));
+        new GetAPISwingResultTask().execute(inputData);
     }
 
 
-    private float mean (ArrayList<Float> table)
-    {
-        int total = 0;
+    private float mean (ArrayList<Float> table) {
+        float total = 0;
         for (float item : table) {
             total += item;
         }
@@ -196,4 +177,32 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
         manager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
         manager.registerListener(this, barometer, SensorManager.SENSOR_DELAY_GAME);
     }
+
+    private class GetAPISwingResultTask extends AsyncTask<String, Integer, String> {
+
+        protected String doInBackground(String... json) {
+            RequestBody body = RequestBody.create(json[0], MediaType.get("application/json; charset=utf-8"));
+            Request request = new Request.Builder()
+                    .url("https://b9aogbpti6.execute-api.us-east-1.amazonaws.com/prod/classifyswing")
+                    .header("Content-Type", "application/json")
+                    .post(body)
+                    .build();
+            try (Response response = client.newCall(request).execute()) {
+
+                JSONObject responseJsonObject = new JSONObject(response.body().string());
+                return responseJsonObject.getString("body");
+            } catch (Exception e) {
+                currentActivity.setText("Network Error");
+            }
+            return "Network Error";
+        }
+
+        protected void onProgressUpdate(Integer... progress) {
+        }
+
+        protected void onPostExecute(String result) {
+            currentActivity.setText(result);
+        }
+    }
+
 }
