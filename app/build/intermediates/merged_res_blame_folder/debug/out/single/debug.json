@@ -4,12 +4,12 @@
         "source": "/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/Users/Cody/Documents/Classes/cs528/Project/DataCollectionApp/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",

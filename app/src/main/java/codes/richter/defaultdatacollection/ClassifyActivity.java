@@ -187,14 +187,17 @@ public class ClassifyActivity extends AppCompatActivity implements SensorEventLi
                     .header("Content-Type", "application/json")
                     .post(body)
                     .build();
-            try (Response response = client.newCall(request).execute()) {
-
-                JSONObject responseJsonObject = new JSONObject(response.body().string());
-                return responseJsonObject.getString("body");
+            try { // Try to make the call to the API
+                try (Response response = client.newCall(request).execute()) {  // Try To Decode The Response Body
+                    JSONObject responseJsonObject = new JSONObject(response.body().string());
+                    return responseJsonObject.getString("body");
+                } catch (Exception e) {
+                    return "Network Error (2)";
+                }
             } catch (Exception e) {
-                currentActivity.setText("Network Error");
+                return "Network Error (1)";
             }
-            return "Network Error";
+
         }
 
         protected void onProgressUpdate(Integer... progress) {
